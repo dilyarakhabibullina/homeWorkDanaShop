@@ -1,4 +1,4 @@
-package ru.itpark.ozon.domain;
+package ru.itpark.ulmart.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,8 +9,8 @@ import lombok.Setter;
 @Setter // сгенерировать set'еры для всех полей
 @NoArgsConstructor // сгенерировать конструктор без параметров
 @AllArgsConstructor // сгенерировать конструктор со всеми параметрами
-public class Book {
+public class Product {
   private int id;
-  private String title;
-  private String author;
+  private String name;
+  private int price;
 }
