@@ -12,6 +12,11 @@ public class ProductRepository { // new BookRepository();
     private Product[] items = new Product[10]; // 10 - null
     private int nextIndex = 0;
 
+    public ProductRepository(Product[] items, int nextIndex) {
+        this.items = items;
+        this.nextIndex = nextIndex;
+    }
+
     public ProductRepository() {
         // FIXME: bad hack
         IPhone iPhone = new IPhone();

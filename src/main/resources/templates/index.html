@@ -26,7 +26,7 @@
             <!-- for (Product product: books) { } -->
             <ul class="list-group mt-3">
                 <li class="list-group-item" data-th-each="product : ${products}" data-th-if="${product}">
-                    <a data-th-href="@{/view/{id}(id=${product.getId()})}">
+                    <a data-th-href="@{/view/{name}(name=${product.getName()})}">
                         <p>[[ ${product.getName()} ]]</p>
                         <p>Цена [[ ${product.getPrice()}]] руб.</p>
                     </a>
