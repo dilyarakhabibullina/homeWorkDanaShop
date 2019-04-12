@@ -16,6 +16,7 @@ public class ProductService { // new BookService(-> <-);
     public Product[] getAll() {
         return repository.getAll();
     }
+
     public Product[] searchByName(String name) {
         Product[] result = new Product[10];
         int resultIndex = 0;
@@ -38,4 +39,11 @@ public class ProductService { // new BookService(-> <-);
         return result;
     }
 
+    public void create(String name, int price) {
+//сюда пишем, какие нам нужны поля для создания строчки массива, id не пишем, так как он присваивается программой
+// по принципу плюс 1 к предыдущему зарегистрировавшемуся
+        Product item = new Product(nextId, name, price);
+        repository.add(item);
+        nextId++;//прибавляет один иднетификатор
+    }
 }

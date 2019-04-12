@@ -15,6 +15,15 @@ public class ProductController {
     private ProductRepository repository;
 
     // mapping -> привязка метода к обработке URL'а
+    @GetMapping("/details") // http://localhost:8080/add
+    public String addPage() {
+        return "details";
+    }
+
+    @GetMapping("/searchresult") // http://localhost:8080/add
+    public String searchingPage() {
+        return "searchresult";
+    }
 
     @GetMapping
     public String index(Model model) {
@@ -28,4 +37,11 @@ public class ProductController {
         model.addAttribute("products", service.searchByName(name));
         return "index"; // строчка с именем шаблона (без расширения)
     }
+    @PostMapping("/details") // равносильно @RequestMapping(value = "/add", method = "POST")
+    // title должен быть равен тому, что в форме name (name="title")
+    public String add(@RequestParam Product product) {
+        repository.add(product);
+        return "details"; // "редиректим на главную"
+    }
+
 }

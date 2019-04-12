@@ -3,6 +3,15 @@ package ru.itpark.ulmart.domain;
 public class TShirt extends Product {
   private int size;
   private String color;
+  private String length;
+
+  public String getLength() {
+    return length;
+  }
+
+  public void setLength(String length) {
+    this.length = length;
+  }
 
   public int getSize() {
     return size;
@@ -20,3 +29,6 @@ public class TShirt extends Product {
     this.color = color;
   }
 }
+
+
+//data-th-if="${product instanceOf T(ru.itpark.ulmart.domain.TShirt)}"

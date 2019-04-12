@@ -4,8 +4,8 @@ import org.springframework.stereotype.Repository;
 import ru.itpark.ulmart.domain.IPhone;
 import ru.itpark.ulmart.domain.Product;
 import ru.itpark.ulmart.domain.TShirt;
-import ru.itpark.ulmart.domain.domain.Skirts;
-import ru.itpark.ulmart.domain.domain.Slime;
+import ru.itpark.ulmart.domain.Skirts;
+import ru.itpark.ulmart.domain.Slime;
 
 @Repository
 public class ProductRepository { // new BookRepository();
@@ -32,6 +32,7 @@ public class ProductRepository { // new BookRepository();
         shirt.setPrice(1_000);
         shirt.setSize(52);
         shirt.setColor("Black");
+        shirt.setLength("Длинная");
 
         Skirts skirts = new Skirts();
         skirts.setPrice(3_000);
