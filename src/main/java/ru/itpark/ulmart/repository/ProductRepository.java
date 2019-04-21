@@ -20,32 +20,34 @@ public class ProductRepository { // new BookRepository();
     public ProductRepository() {
         // FIXME: bad hack
         IPhone iPhone = new IPhone();
-        iPhone.setName("iPhone XR новое поступление");
+        iPhone.setName("iPhone новое поступление");
         iPhone.setPrice(64_000);
         iPhone.setModel("XR");
         iPhone.setOs("iOS");
         iPhone.setMemorySize(64);
         iPhone.setColor("Pink Gold");
+        iPhone.setId(1);
 
         TShirt shirt = new TShirt();
-        shirt.setName("Nike");
+        shirt.setName("Футболка Nike");
         shirt.setPrice(1_000);
         shirt.setSize(52);
         shirt.setColor("Black");
         shirt.setLength("Длинная");
+        shirt.setId(2);
 
         Skirts skirts = new Skirts();
         skirts.setPrice(3_000);
-        skirts.setName("юбка");
+        skirts.setName("Юбка");
         skirts.setColor("dark blue");
         skirts.setLength("midi");
         skirts.setStyle("office");
+        skirts.setBrand("Prada");
 
         Slime slime = new Slime();
-        slime.setName("happy pie with waffles");
+        slime.setName("Слайм");
         slime.setPrice(200);
-
-
+        slime.setType ("happy pie with waffles");
         slime.setColor("white");
         slime.setFlavoring("тирамису");
         slime.setVolume(150);
@@ -55,7 +57,7 @@ public class ProductRepository { // new BookRepository();
         add(iPhone);
         add(shirt);
         add(skirts);
-        add (slime);
+        add(slime);
     }
 
     public Product[] getAll() {

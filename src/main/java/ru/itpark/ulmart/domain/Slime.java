@@ -8,6 +8,15 @@ public class Slime extends Product {
     private String scent;
     private String flavoring;
     private String supplements;
+    private String type;
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
 
     public String getColor() {
         return color;

@@ -6,9 +6,75 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Результат поиска</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-<h3>Результат поиска:</h3>
+
+
+<h3>Результат поиска: [[${result}]]</h3>
+
+
+<div class="row">
+    <div class="col-sm-3">
+<div class="card-deck">
+
+    <div class="card mt-3" data-th-each="product : ${products}" data-th-if="${product}">
+
+        <!--each повторяет div столько раз, сколько у меня продуктов-->
+        <!--<a data-th-href="@{/view/{name}(name=${product.getName()})}">-->
+
+        <div class="card-header bg-danger text-center text-white">
+
+            [[ ${product.getName()} ]]
+        </div>
+
+        <ul class="list-group mt-3">
+
+
+            <li class="list-group-item">
+                <h6>
+                    Цена [[ ${product.getPrice()}]] руб.
+                </h6>
+            </li>
+            <li class="list-group-item"
+                data-th-if="${product instanceOf T(ru.itpark.ulmart.domain.IPhone)}">
+                Модель: [[ ${product.getModel()}]]
+            </li>
+
+            <li class="list-group-item"
+                data-th-if="${product instanceOf T(ru.itpark.ulmart.domain.TShirt)}">
+                Цвет: [[ ${product.getColor()}]]
+            </li>
+
+            <li class="list-group-item"
+                data-th-if="${product instanceOf T(ru.itpark.ulmart.domain.Skirts)}">
+                Марка: [[ ${product.getBrand()}]]
+            </li>
+            <li class="list-group-item"
+                data-th-if="${product instanceOf T(ru.itpark.ulmart.domain.Skirts)}">
+                Стиль: [[ ${product.getStyle()}]]
+            </li>
+            <li class="list-group-item"
+                data-th-if="${product instanceOf T(ru.itpark.ulmart.domain.Slime)}">
+                Вид: [[ ${product.getType()}]]
+            </li>
+
+            <li class="list-group-item"
+                data-th-if="${product instanceOf T(ru.itpark.ulmart.domain.Slime)}">
+                Цвет: [[ ${product.getColor()}]]
+            </li>
+
+
+            <a class="card-link text-center mt-3 mb-2" data-th-href="@{/details}">
+                Детали
+            </a>
+
+
+        </ul>
+    </div>
+</div>
+</div>
+</div>
 </body>
 </html>

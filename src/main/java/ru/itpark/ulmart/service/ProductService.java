@@ -46,4 +46,13 @@ public class ProductService { // new BookService(-> <-);
         repository.add(item);
         nextId++;//прибавляет один иднетификатор
     }
+    public Product getById (int id){
+        return repository.getById(id);
+    }
 }
+
+
+
+   
+        
+

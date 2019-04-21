@@ -7,6 +7,15 @@ public class Skirts extends Product {
     private String color;
     private String length;
     private String style;
+    private String brand;
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
 
     public int getSize() {
         return size;
