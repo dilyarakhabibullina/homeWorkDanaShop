@@ -43,16 +43,18 @@ public class ProductRepository { // new BookRepository();
         skirts.setLength("midi");
         skirts.setStyle("office");
         skirts.setBrand("Prada");
+        skirts.setId(3);
 
         Slime slime = new Slime();
         slime.setName("Слайм");
         slime.setPrice(200);
-        slime.setType ("happy pie with waffles");
+        slime.setType("happy pie with waffles");
         slime.setColor("white");
         slime.setFlavoring("тирамису");
         slime.setVolume(150);
         slime.setSupplements("waffles");
-
+        slime.setId(4);
+        slime.setScent("лаванда");
 
         add(iPhone);
         add(shirt);
@@ -77,5 +79,16 @@ public class ProductRepository { // new BookRepository();
             }
         }
         return null;
+    }
+
+    public void update(Product product) {
+        for (int i = 0; i < items.length; i++) {
+            Product item = items[i];
+            if (item != null && item.getId() == product.getId()) {
+                items[i] = product;
+            }
+
+        }
+
     }
 }

@@ -25,6 +25,17 @@
             <li class="list-group-item">Размер: [[${product.getSize()}]]</li>
             <li class="list-group-item">Длина: [[${product.getLength()}]]</li>
         </ul>
+        <ul class="mt-3" data-th-if="${product instanceOf T(ru.itpark.ulmart.domain.Skirts)}">
+        <li class="list-group-item">Цвет: [[${product.getColor()}]]</li>
+        <li class="list-group-item">Длина: [[${product.getLength()}]]</li>
+    </ul>
+        <ul class="mt-3" data-th-if="${product instanceOf T(ru.itpark.ulmart.domain.Slime)}">
+            <li class="list-group-item">Объем: [[${product.getVolume()}]]</li>
+            <li class="list-group-item">Запах: [[${product.getScent()}]]</li>
+            <li class="list-group-item">Отдушка: [[${product.getFlavoring()}]]</li>
+            <li class="list-group-item">Добавки: [[${product.getSupplements()}]]</li>
+        </ul>
+
     </div>
 </div>
 

@@ -28,6 +28,11 @@ public class TShirt extends Product {
   public void setColor(String color) {
     this.color = color;
   }
+
+    @Override
+    public String getType() {
+        return null;
+    }
 }
 
 

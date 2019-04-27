@@ -9,7 +9,7 @@ import lombok.Setter;
 @Setter // сгенерировать set'еры для всех полей
 @NoArgsConstructor // сгенерировать конструктор без параметров
 @AllArgsConstructor // сгенерировать конструктор со всеми параметрами
-public class Product {
+public abstract class Product {
   private int id;
   private String name;
   private int price;
@@ -17,4 +17,6 @@ public class Product {
   public String getName() {
     return name;
   }
+
+  public abstract String getType();
 }

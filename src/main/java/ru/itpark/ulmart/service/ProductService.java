@@ -30,25 +30,41 @@ public class ProductService { // new BookService(-> <-);
             //if (product == null) {
             //continue;
 
-            if (!items.getName().contains(name)) {
-                continue;
+            //if (!items.getName().contains(name)) {
+            //  continue;
+
+            // if (product.getName().toLowerCase().contains(search.toLowerCase())) {
+            //   result[nextIndex] = product;
+            // nextIndex++;
+            //}
+            if (items.getName().toLowerCase().contains(name.toLowerCase())) {
+
+                result[resultIndex] = items;
+
             }
-            result[resultIndex] = items;
             resultIndex++;
+
         }
         return result;
     }
 
+    // TODO: методы создания на каждый продукт
     public void create(String name, int price) {
 //сюда пишем, какие нам нужны поля для создания строчки массива, id не пишем, так как он присваивается программой
 // по принципу плюс 1 к предыдущему зарегистрировавшемуся
-        Product item = new Product(nextId, name, price);
-        repository.add(item);
+        //Product item = new Product(nextId, name, price);
+        //repository.add(item);
         nextId++;//прибавляет один иднетификатор
     }
-    public Product getById (int id){
+
+    public Product getById(int id) {
         return repository.getById(id);
     }
+
+    public void updateById(int id, String name, int price) {
+        Product product = new Product(id, name, price);
+        repository.update(product);
+        }
 }
 
 

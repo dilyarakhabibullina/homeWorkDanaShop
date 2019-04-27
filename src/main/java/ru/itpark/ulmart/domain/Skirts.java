@@ -48,4 +48,9 @@ public class Skirts extends Product {
     public void setStyle(String style) {
         this.style = style;
     }
+
+    @Override
+    public String getType() {
+        return null;
+    }
 }

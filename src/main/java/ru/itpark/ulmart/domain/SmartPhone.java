@@ -1,6 +1,6 @@
 package ru.itpark.ulmart.domain;
 
-public class SmartPhone extends Product {
+public abstract class SmartPhone extends Product {
   private String os;
 
   public String getOs() {

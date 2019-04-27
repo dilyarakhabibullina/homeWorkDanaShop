@@ -56,11 +56,40 @@ public class ProductController {
         return "searchresult";
     }
 
+
     @GetMapping("/view/{id}")
     public String details(@PathVariable int id, Model model) {
         model.addAttribute("product", service.getById(id));
         return "details";
     }
+
+    @GetMapping("/add")
+    public String addPage(@RequestParam String type, Model model) {
+        model.addAttribute("type", type);
+        return "add";
+    }
+
+    @PostMapping("/add-iphone")
+    public String addIPhone(@RequestParam String name) {
+        // TODO:
+        return "redirect:/";
+    }
+
+    @GetMapping("/edit/{id}")
+    public String editPage(@PathVariable int id, Model model) {
+        model.addAttribute("product", service.getById(id));
+        return "edit";
+    }
+
+    @PostMapping("/edit/{id}")
+    public String editForm(
+            @PathVariable int id,
+            @RequestParam String name,
+            @RequestParam int price) {
+        service.updateById(id, name,price);
+        return "redirect:/";
+    }
+
 }
 
 
