@@ -85,8 +85,10 @@ public class ProductController {
     public String editForm(
             @PathVariable int id,
             @RequestParam String name,
-            @RequestParam int price) {
-        service.updateById(id, name,price);
+            @RequestParam int price,
+            @RequestParam String type
+    ) {
+        service.updateById(id, name, price, type);
         return "redirect:/";
     }
 

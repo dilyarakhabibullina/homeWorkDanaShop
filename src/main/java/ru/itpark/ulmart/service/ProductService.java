@@ -61,8 +61,8 @@ public class ProductService { // new BookService(-> <-);
         return repository.getById(id);
     }
 
-    public void updateById(int id, String name, int price) {
-        Product product = new Product(id, name, price);
+    public void updateById(int id, String name, int price, String type) {
+        Product product = new Product(id, name, price, type);
         repository.update(product);
         }
 }

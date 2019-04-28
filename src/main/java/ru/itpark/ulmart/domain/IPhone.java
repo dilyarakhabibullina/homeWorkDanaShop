@@ -29,8 +29,8 @@ public class IPhone extends SmartPhone /*, Colored - множественное 
     this.memorySize = memorySize;
   }
 
-  @Override
-  public String getType() {
-    return "iphone";
-  }
+  //@Override
+  //public String getType() {
+    //return "iphone";
+  //}
 }

@@ -9,14 +9,22 @@ import lombok.Setter;
 @Setter // сгенерировать set'еры для всех полей
 @NoArgsConstructor // сгенерировать конструктор без параметров
 @AllArgsConstructor // сгенерировать конструктор со всеми параметрами
-public abstract class Product {
+public class Product {
   private int id;
   private String name;
   private int price;
+  private String type;
 
   public String getName() {
     return name;
   }
 
-  public abstract String getType();
+  public String getType() {
+    return type;
+  }
+
+  public void setType(String type) {
+    this.type = type;
+  }
+  //public String getType();
 }

@@ -29,10 +29,10 @@ public class TShirt extends Product {
     this.color = color;
   }
 
-    @Override
-    public String getType() {
-        return null;
-    }
+//    @Override
+//    public String getType() {
+//        return null;
+//    }
 }
 
 

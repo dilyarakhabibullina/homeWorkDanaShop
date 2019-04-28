@@ -37,8 +37,10 @@
                     <!--<a data-th-href="@{/view/{name}(name=${product.getName()})}">-->
 
                     <div class="card-header bg-danger text-center text-white">
+                        <a data-th-href="@{/edit/{id}(id=${product.getId()})}" class="text-white">
+                            [[ ${product.getName()} ]]
+                        </a>
 
-                        [[ ${product.getName()} ]]
                     </div>
 
                     <ul class="list-group mt-3">

@@ -49,8 +49,8 @@ public class Skirts extends Product {
         this.style = style;
     }
 
-    @Override
-    public String getType() {
-        return null;
-    }
+//    @Override
+////    public String getType() {
+////        return null;
+////    }
 }

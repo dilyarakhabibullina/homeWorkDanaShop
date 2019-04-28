@@ -27,6 +27,7 @@ public class ProductRepository { // new BookRepository();
         iPhone.setMemorySize(64);
         iPhone.setColor("Pink Gold");
         iPhone.setId(1);
+        iPhone.setType("iphone");
 
         TShirt shirt = new TShirt();
         shirt.setName("Футболка Nike");
