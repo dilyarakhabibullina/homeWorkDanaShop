@@ -36,6 +36,7 @@ public class ProductRepository { // new BookRepository();
         shirt.setColor("Black");
         shirt.setLength("Длинная");
         shirt.setId(2);
+        shirt.setType("tshirt");
 
         Skirts skirts = new Skirts();
         skirts.setPrice(3_000);
@@ -45,6 +46,7 @@ public class ProductRepository { // new BookRepository();
         skirts.setStyle("office");
         skirts.setBrand("Prada");
         skirts.setId(3);
+        skirts.setType("skirt");
 
         Slime slime = new Slime();
         slime.setName("Слайм");
@@ -56,6 +58,7 @@ public class ProductRepository { // new BookRepository();
         slime.setSupplements("waffles");
         slime.setId(4);
         slime.setScent("лаванда");
+        slime.setType("slime");
 
         add(iPhone);
         add(shirt);
