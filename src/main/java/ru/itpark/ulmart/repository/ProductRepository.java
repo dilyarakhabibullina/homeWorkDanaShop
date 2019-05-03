@@ -62,7 +62,7 @@ public class ProductRepository { // new BookRepository();
 
         add(iPhone);
         add(shirt);
-        add(skirts);
+//        add(skirts);
         add(slime);
     }
 

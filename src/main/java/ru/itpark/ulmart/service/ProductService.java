@@ -2,6 +2,7 @@ package ru.itpark.ulmart.service;
 
 import org.springframework.stereotype.Service;
 import ru.itpark.ulmart.domain.Product;
+import ru.itpark.ulmart.domain.Skirts;
 import ru.itpark.ulmart.repository.ProductRepository;
 
 @Service
@@ -49,12 +50,17 @@ public class ProductService { // new BookService(-> <-);
     }
 
     // TODO: методы создания на каждый продукт
-    public void create(String name, int price) {
+    // public void create(String name, int price) {
 //сюда пишем, какие нам нужны поля для создания строчки массива, id не пишем, так как он присваивается программой
 // по принципу плюс 1 к предыдущему зарегистрировавшемуся
-        //Product item = new Product(nextId, name, price);
-        //repository.add(item);
-        nextId++;//прибавляет один иднетификатор
+    //Product item = new Product(nextId, name, price);
+    //repository.add(item);
+    //   nextId++;//прибавляет один иднетификатор
+    //}
+    public void createSkirt(String name, int price, int size, String color, String length, String style, String brand) {
+        Skirts item = new Skirts(nextId, name, price, size, color, length, style, brand);
+        repository.add(item);
+        nextId++;
     }
 
     public Product getById(int id) {
@@ -64,7 +70,7 @@ public class ProductService { // new BookService(-> <-);
     public void updateById(int id, String name, int price, String type) {
         Product product = new Product(id, name, price, type);
         repository.update(product);
-        }
+    }
 }
 
 

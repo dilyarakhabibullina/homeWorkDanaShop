@@ -19,8 +19,19 @@ public class ProductController {
     public String addPage() {
         return "details";
     }
-
-
+    @GetMapping("/add-skirt") // http://localhost:8080/add
+    public String addSkirt() {
+        return "add-skirt";
+    }
+    @PostMapping("/add-skirt") // равносильно @RequestMapping(value = "/add", method = "POST")
+    // title должен быть равен тому, что в форме name (name="title")
+    public String addSkirt(@RequestParam String name, @RequestParam int price,
+                           int size, @RequestParam String color,
+                           @RequestParam String length, @RequestParam String style,
+                           @RequestParam String brand) {
+        service.createSkirt(name, price, size, color, length, style, brand);
+        return "redirect:/"; // "редиректим на главную"
+    }
     @GetMapping
     public String index(Model model) {
         model.addAttribute("products", repository.getAll());//добавляю в модель products для вьюшки, в качестве значения-
@@ -50,8 +61,22 @@ public class ProductController {
 
     @PostMapping(params = "name")// равносильно @RequestMapping(value = "/add", method = "POST")
     // title должен быть равен тому, что в форме name (name="title")
-    public String add(Model model, @RequestParam String name, @RequestParam int price) {
-        service.create(name, price);
+    //public String add(Model model, @RequestParam String name, @RequestParam int price) {
+       // service.create(name, price);
+       // model.addAttribute("products", service.getAll());
+       // return "searchresult";
+    //}
+    @GetMapping("/view-skirt/{id}")
+    public String addSkirt(Model model, @RequestParam String name, @RequestParam int price, @RequestParam int size,
+                           @RequestParam String color, @RequestParam String length, @RequestParam String style, @RequestParam String brand) {
+
+//        private int size;
+//        private String color;
+//        private String length;
+//        private String style;
+//        private String brand;
+
+        service.createSkirt(name, price, size, color, length, style, brand);
         model.addAttribute("products", service.getAll());
         return "searchresult";
     }
