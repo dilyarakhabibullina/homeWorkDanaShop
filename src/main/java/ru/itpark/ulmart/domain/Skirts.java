@@ -9,11 +9,12 @@ public class Skirts extends Product {
     private String style;
     private String brand;
 
-    public String getBrand() {
-        return brand;
-    }
-
-    public void setBrand(String brand) {
+    public Skirts(int id, String name, int price, String type, int size, String color, String length, String style, String brand) {
+        super(id, name, price, type);
+        this.size = size;
+        this.color = color;
+        this.length = length;
+        this.style = style;
         this.brand = brand;
     }
 
@@ -49,7 +50,14 @@ public class Skirts extends Product {
         this.style = style;
     }
 
-//    @Override
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+    //    @Override
 ////    public String getType() {
 ////        return null;
 ////    }

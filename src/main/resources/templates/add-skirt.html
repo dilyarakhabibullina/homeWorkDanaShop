@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1>ADD SKIRT</h1>
+
+            <!-- отправляется на текущий адрес, method=GET -->
+            <form class="mt-3" data-th-action="@{/add-skirt}" method="post">
+                <div class="form-group">
+                    <label for="name">Наименование</label>
+                    <input class="form-control" id="name" type="text" name="name" placeholder="Наименование">
+                </div>
+                <div class="form-group">
+                    <label for="price">Цена</label>
+                    <input class="form-control" id="price" type="text" name="price" placeholder="Цена">
+                </div>
+                <div class="form-group">
+                    <label for="brand">Марка</label>
+                    <input class="form-control" id="brand" type="text" name="brand" placeholder="бренд">
+                </div>
+                <div class="form-group">
+                    <label for="size">Размер</label>
+                    <input class="form-control" id="size" type="text" name="size" placeholder="размер">
+                </div>
+                <div class="form-group">
+                    <label for="color">Цвет</label>
+                    <input class="form-control" id="color" type="text" name="color" placeholder="цвет">
+                </div>
+                <div class="form-group">
+                    <label for="length">Длина</label>
+                    <input class="form-control" id="length" type="text" name="length" placeholder="длина">
+                </div>
+                <div class="form-group">
+                    <label for="style">Стиль</label>
+                    <input class="form-control" id="style" type="text" name="style" placeholder="стиль">
+                </div>
+
+
+                <button class="btn btn-primary">Добавить юбку</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

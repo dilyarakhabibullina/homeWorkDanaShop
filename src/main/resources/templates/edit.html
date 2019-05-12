@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Edit</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+
+<h1>Изменить характеристики товара</h1>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div data-th-if="${product.getType()} == 'iphone'" data-th-action="@{/edit/{id}(id= ${product.getId()})}"
+                 method="post">
+                <div class="form-group">
+                    <label for="name">Наименование товара</label>
+                    <input class="form-control" id="name" type="text" name="name" placeholder="Наименование"
+                           data-th-value="${product.getName()}">
+                </div>
+                <label for="price">Цена</label>
+                <input class="form-control" id="price" type="text" name="price" placeholder="Цена"
+                       data-th-value="${product.getPrice()}">
+                <div class="form-group">
+                    <label for="price">Тип</label>
+                    <input class="form-control" id="iphone" type="text" name="type" placeholder="тип"
+                           data-th-value="${product.getType()}">
+                </div>
+                <div class="form-group">
+                    <label for="model">Модель</label>
+                    <input class="form-control" id="model" type="text" name="type" placeholder="модель"
+                           data-th-value="${product.getModel()}">
+                </div>
+                <button>Сохранить айфон</button>
+            </div>
+            </form>
+            <form data-th-if="${product.getType()} == 'tshirt'"
+                  data-th-action="@{/edit/{id}(id= ${product.getId()})}" method="post">
+                <div class="form-group">
+                    <label for="name">Наименование товара</label>
+                    <input class="form-control" id="name" type="text" name="name" placeholder="Наименование"
+                           data-th-value="${product.getName()}">
+                </div>
+                <div class="form-group">
+                    <label for="price">Цена</label>
+                    <input class="form-control" id="type" type="text" name="price" placeholder="Цена"
+                           data-th-value="${product.getPrice()}">
+                </div>
+                <div class="form-group">
+                    <label for="type">Тип</label>
+                    <input class="form-control" id="skirt" type="text" name="type" placeholder="тип"
+                           data-th-value="${product.getType()}">
+                </div>
+                <div class="form-group">
+                    <label for="length">Длина</label>
+                    <input class="form-control" id="length" type="text" name="length" placeholder="длина"
+                           data-th-value="${product.getLength()}">
+                </div>
+                <button>Сохранить футболку</button>
+            </form>
+            <form data-th-if="${product.getType()} == 'skirt'" data-th-action="@{/edit/{id}(id= ${product.getId()})}"
+                  method="post">
+                <div class="form-group">
+                    <label for="name">Наименование товара</label>
+                    <input class="form-control" id="name" type="text" name="name" placeholder="Наименование"
+                           data-th-value="${product.getName()}">
+                </div>
+                <div class="form-group">
+                    <label for="price">Цена</label>
+                    <input class="form-control" id="price" type="text" name="price" placeholder="Цена"
+                           data-th-value="${product.getPrice()}">
+                </div>
+                <div class="form-group">
+                    <label for="brand">Бренд</label>
+                    <input class="form-control" id="brand" type="text" name="type" placeholder="бренд"
+                           data-th-value="${product.getBrand()}">
+                </div>
+                <div class="form-group">
+                    <label for="style">Стиль</label>
+                    <input class="form-control" id="style" type="text" name="style" placeholder="стиль"
+                           data-th-value="${product.getStyle()}">
+                </div>
+                <button>Сохранить юбку</button>
+            </form>
+            <form data-th-if="${product.getType()} == 'slime'" data-th-action="@{/edit/{id}(id= ${product.getId()})}"
+                  method="post">
+                <div class="form-group">
+                    <div class="form-group">
+                        <label for="name">Наименование товара</label>
+                        <input class="form-control" id="name" type="text" name="name" placeholder="Наименование"
+                               data-th-value="${product.getName()}">
+                    </div>
+                    <div class="form-group">
+                        <label for="price">Цена</label>
+                        <input class="form-control" id="price" type="text" name="price" placeholder="Цена"
+                               data-th-value="${product.getPrice()}">
+                    </div>
+                    <div class="form-group">
+                        <label for="volume">Oбъем</label>
+                        <input class="form-control" id="volume" type="text" name="type" placeholder="объем"
+                               data-th-value="${product.getVolume()}">
+                    </div>
+                    <div class="form-group">
+                        <label for="scent">Запах</label>
+                        <input class="form-control" id="scent" type="text" name="style" placeholder="стиль"
+                               data-th-value="${product.getScent()}">
+                    </div>
+                    <button>Сохранить слайм</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

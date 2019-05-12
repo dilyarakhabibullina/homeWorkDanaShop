@@ -15,7 +15,9 @@
 
         <h3 class="row">Детали покупки:</h3>
         <h1>[[${product.getName()}]]</h1>
-
+        <form class="d-inline" data-th-action="@{/remove/{id}(id=${product.getId()})}" method="post">
+            <button class="btn btn-danger">Удалить</button>
+        </form>
 
         <ul class="mt-3" data-th-if="${product instanceOf T(ru.itpark.ulmart.domain.IPhone)}">
             <li class="list-group-item">Цвет: [[${product.getColor()}]]</li>
