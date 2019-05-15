@@ -39,7 +39,7 @@
             </div>
             </form>
             <form data-th-if="${product.getType()} == 'tshirt'"
-                  data-th-action="@{/edit/{id}(id= ${product.getId()})}" method="post">
+                  data-th-action="@{/edit/{id}/{type}(id= ${product.getId()}, type=${product.getType()})}" method="post">
                 <div class="form-group">
                     <label for="name">Наименование товара</label>
                     <input class="form-control" id="name" type="text" name="name" placeholder="Наименование"
@@ -86,7 +86,7 @@
                 </div>
                 <button>Сохранить юбку</button>
             </form>
-            <form data-th-if="${product.getType()} == 'slime'" data-th-action="@{/edit/{id}(id= ${product.getId()})}"
+            <form data-th-if="${product.getType()} == 'slime'" data-th-action="@{/edit/{id}/{type}(id= ${product.getId(), type=${product.getType()})}"
                   method="post">
                 <div class="form-group">
                     <div class="form-group">

@@ -9,7 +9,7 @@ import ru.itpark.ulmart.domain.Slime;
 
 @Repository
 public class ProductRepository { // new BookRepository();
-    private Product[] items = new Product[10]; // 10 - null
+    private Product[] items = new Product[100]; // 10 - null
     private int nextIndex = 0;
 
     public ProductRepository(Product[] items, int nextIndex) {
@@ -19,24 +19,16 @@ public class ProductRepository { // new BookRepository();
 
     public ProductRepository() {
         // FIXME: bad hack
-        IPhone iPhone = new IPhone();
-        iPhone.setName("iPhone новое поступление");
-        iPhone.setPrice(64_000);
-        iPhone.setModel("XR");
-        iPhone.setOs("iOS");
-        iPhone.setMemorySize(64);
-        iPhone.setColor("Pink Gold");
-        iPhone.setId(1);
-        iPhone.setType("iphone");
+        IPhone iPhone = new IPhone(1, "iPhone новое поступление", 64_000, "iOS", "XR", "Pink", 64);
 
-        TShirt shirt = new TShirt();
-        shirt.setName("Футболка Nike");
-        shirt.setPrice(1_000);
-        shirt.setSize(52);
-        shirt.setColor("Black");
-        shirt.setLength("Длинная");
-        shirt.setId(2);
-        shirt.setType("tshirt");
+        TShirt shirt = new TShirt(2, "Футболка Nike", 1000, 52, "Black", "Длинная");
+//        shirt.setName("Футболка Nike");
+//        shirt.setPrice(1_000);
+//        shirt.setSize(52);
+//        shirt.setColor("Black");
+//        shirt.setLength("Длинная");
+//        shirt.setId(2);
+//        shirt.setType("tshirt");
 
 //        Skirts skirts = new Skirts();
 //        skirts.setPrice(3_000);
@@ -48,22 +40,22 @@ public class ProductRepository { // new BookRepository();
 //        skirts.setId(3);
 //        skirts.setType("skirt");
 
-        Slime slime = new Slime();
-        slime.setName("Слайм");
-        slime.setPrice(200);
-        slime.setType("happy pie with waffles");
-        slime.setColor("white");
-        slime.setFlavoring("тирамису");
-        slime.setVolume(150);
-        slime.setSupplements("waffles");
-        slime.setId(4);
-        slime.setScent("лаванда");
-        slime.setType("slime");
+//        Slime slime = new Slime();
+//        slime.setName("Слайм");
+//        slime.setPrice(200);
+//        slime.setType("happy pie with waffles");
+//        slime.setColor("white");
+//        slime.setFlavoring("тирамису");
+//        slime.setVolume(150);
+//        slime.setSupplements("waffles");
+//        slime.setId(4);
+//        slime.setScent("лаванда");
+//        slime.setType("slime");
 
         add(iPhone);
         add(shirt);
         //add(skirts);
-        add(slime);
+//        add(slime);
     }
 
     public Product[] getAll() {

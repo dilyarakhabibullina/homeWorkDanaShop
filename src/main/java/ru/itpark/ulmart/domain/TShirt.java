@@ -5,6 +5,13 @@ public class TShirt extends Product {
   private String color;
   private String length;
 
+  public TShirt(int id, String name, int price, int size, String color, String length) {
+    super(id, name, price, "tshirt");
+    this.size = size;
+    this.color = color;
+    this.length = length;
+  }
+
   public String getLength() {
     return length;
   }

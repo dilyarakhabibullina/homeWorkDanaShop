@@ -27,9 +27,12 @@ public class ProductController {
 
     @PostMapping("/add-skirt") // равносильно @RequestMapping(value = "/add", method = "POST")
     // title должен быть равен тому, что в форме name (name="title")
-    public String addSkirt(@RequestParam String name, @RequestParam int price,
-                           int size, @RequestParam String color,
-                           @RequestParam String length, @RequestParam String style,
+    public String addSkirt(@RequestParam String name,
+                           @RequestParam int price,
+                           @RequestParam int size,
+                           @RequestParam String color,
+                           @RequestParam String length,
+                           @RequestParam String style,
                            @RequestParam String brand) {
         service.createSkirt(name, price, size, color, length, style, brand);
         return "redirect:/"; // "редиректим на главную"
@@ -109,22 +112,35 @@ public class ProductController {
         return "edit";
     }
 
-    @PostMapping("/edit/{id}")
-    public String editForm(
+    @PostMapping("/edit/{id}/iphone")
+    public String saveIPhone(
             @PathVariable int id,
             @RequestParam String name,
             @RequestParam int price,
             @RequestParam String type
-
+            // @RequestParam для айфона
     ) {
         service.updateById(id, name, price, type);
         return "redirect:/";
     }
-@PostMapping ("/remove/{id}")
-    public String remove (@PathVariable int id){
-        service.removeById (id);
+
+    @PostMapping("/edit/{id}/tshirt")
+    public String saveTShirt(
+            @PathVariable int id,
+            @RequestParam String name,
+            @RequestParam int price,
+            @RequestParam String type
+            // @RequestParam для футболки
+    ) {
+        service.updateById(id, name, price, type);
         return "redirect:/";
-}
+    }
+
+    @PostMapping("/remove/{id}")
+    public String remove(@PathVariable int id) {
+        service.removeById(id);
+        return "redirect:/";
+    }
 }
 
 

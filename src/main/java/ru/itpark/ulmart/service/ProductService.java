@@ -8,7 +8,7 @@ import ru.itpark.ulmart.repository.ProductRepository;
 @Service
 public class ProductService { // new BookService(-> <-);
     private ProductRepository repository;
-    private int nextId = 1;
+    private int nextId = 10;
 
     public ProductService(ProductRepository repository) {
         this.repository = repository;
@@ -57,7 +57,7 @@ public class ProductService { // new BookService(-> <-);
     //repository.add(item);
     //   nextId++;//прибавляет один иднетификатор
     //}
-    public void createSkirt(int nextId, String name, int price, int size, String color, String length, String style, String brand) {
+    public void createSkirt(String name, int price, int size, String color, String length, String style, String brand) {
         Skirts item = new Skirts(nextId, name, price, size, color, length, style, brand);
         repository.add(item);
         nextId++;
@@ -68,6 +68,7 @@ public class ProductService { // new BookService(-> <-);
     }
 
     public void updateById(int id, String name, int price, String type) {
+        // TODO: надо не продукт сохранять, а конкретный тип
         Product product = new Product(id, name, price, type);
         //Skirts item = new Skirts();item.setType("skirt");
         repository.update(product);

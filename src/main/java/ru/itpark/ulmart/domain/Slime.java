@@ -8,14 +8,14 @@ public class Slime extends Product {
     private String scent;
     private String flavoring;
     private String supplements;
-    private String type;
 
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
+    public Slime(int id, String name, int price, String type, String color, int volume, String scent, String flavoring, String supplements) {
+        super(id, name, price, type);
+        this.color = color;
+        this.volume = volume;
+        this.scent = scent;
+        this.flavoring = flavoring;
+        this.supplements = supplements;
     }
 
     public String getColor() {

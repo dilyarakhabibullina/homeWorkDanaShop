@@ -9,8 +9,8 @@ public class Skirts extends Product {
     private String style;
     private String brand;
 
-    public Skirts(int id, String name, int price, String type, int size, String color, String length, String style, String brand) {
-        super(id, name, price, type);
+    public Skirts(int id, String name, int price, int size, String color, String length, String style, String brand) {
+        super(id, name, price, "skirt");
         this.size = size;
         this.color = color;
         this.length = length;
