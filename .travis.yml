@@ -1,5 +1,4 @@
-language: java
-jdk: oraclejdk12
+language: generic
 script: ./mvnw -e verify
 after_success:
   - bash <(curl -s https://codecov.io/bash)
